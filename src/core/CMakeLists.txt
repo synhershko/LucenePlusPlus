@@ -3,6 +3,19 @@ PROJECT (lucene++-lib)
 ####################################
 # THE lucene++ library
 ####################################
+#add the files to our groups and core
+SOURCE_GROUP("analysis" ./core/analysis/*)
+#seems to be a bug in cmake, can't put these in analysis\\standard folder :(
+SOURCE_GROUP("analysis-standard" ./core/analysis/standard/*)
+SOURCE_GROUP("document" ./core/document/*)
+SOURCE_GROUP("debug" ./core/debug/*)
+SOURCE_GROUP("index" ./core/index/*)
+SOURCE_GROUP("queryParser" ./core/queryparser/*)
+SOURCE_GROUP("search" ./core/search/*)
+SOURCE_GROUP("search-spans" ./core/search/spans/*)
+SOURCE_GROUP("store" ./core/store/*)
+SOURCE_GROUP("util" ./core/util/*)
+
 file(GLOB_RECURSE lucene_sources
   ${lucene++-lib_SOURCE_DIR}/search/*.cpp
   ${lucene++-lib_SOURCE_DIR}/analysis/*.cpp
